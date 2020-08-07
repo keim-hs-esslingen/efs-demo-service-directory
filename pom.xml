@@ -12,7 +12,7 @@
     
 	<groupId>com.github.keim-hs-esslingen.efs</groupId>
 	<artifactId>demo-service-directory</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1-SNAPSHOT</version>
     
 	<name>Demo-Service-Directory</name>
 	<description>The service for searching relevant services.</description>
@@ -42,7 +42,7 @@
 
 	<properties>
         <java.version>14</java.version>
-		<service-directory-plugin.version>1.0.0</service-directory-plugin.version>
+		<service-directory-plugin.version>1.0.1-SNAPSHOT</service-directory-plugin.version>
 	</properties>
 	
 	<dependencies>
