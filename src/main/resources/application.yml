@@ -1,37 +1,12 @@
 spring:
-  profiles:
-    active: test
   application:
     name: service-directory
 
 server:
-  port: 9900
+  port: 9900 # Configure a port for your service
 
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:${server.port}/eureka/
   
-management:
-  endpoint:
-    health:
-      show-details: always
-  endpoints:
-    web:
-      exposure:
-        include:
-        - '*'
-
-      
----
-
-spring:
-  profiles: test
-
-spring.output.ansi.enabled: ALWAYS
-
-logging.level:
-    org.springframework:
-      web: TRACE
-      web.servlet.view.freemarker.FreeMarkerConfigurer: INFO
-
