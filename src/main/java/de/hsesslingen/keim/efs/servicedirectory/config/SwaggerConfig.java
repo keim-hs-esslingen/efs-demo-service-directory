@@ -23,16 +23,11 @@
  */
 package de.hsesslingen.keim.efs.servicedirectory.config;
 
-import java.util.Arrays;
 import java.util.Collections;
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
-import springfox.documentation.builders.ParameterBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
-import springfox.documentation.schema.ModelRef;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.Contact;
 import springfox.documentation.service.Tag;
@@ -41,41 +36,35 @@ import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
- * Configuration class for Swagger Api documentation. Defines a Docket with api details, tags etc.
- * @author k.sivarasah
- * 18 Sep 2019
+ * Configuration class for Swagger Api documentation. Defines a Docket with api
+ * details, tags etc.
+ *
+ * @author k.sivarasah 18 Sep 2019
  */
-
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
 
-	public static final String API_KEY_DESC = "Api key for authentication";
-	public static final String API_KEY_HEADER_NAME = "x-api-key";
-	
-	@Bean
-	public Docket api() {
-		return new Docket(DocumentationType.SWAGGER_2)
-				.select()
-				.apis(RequestHandlerSelectors.basePackage("de.hsesslingen.keim.efs.servicedirectory.controller"))
-				.paths(PathSelectors.any())
-				.build()
-				.tags(new Tag("Search Api", "Search for available services using filter criteria"), 
-						new Tag("Service Api", "Service related API with CRUD functionalities"))
-				.apiInfo(apiInfo())
-				.globalOperationParameters(Arrays.asList(new ParameterBuilder()
-						.name(API_KEY_HEADER_NAME)
-						.description(API_KEY_DESC)
-						.modelRef(new ModelRef("string"))
-						.parameterType("header")
-						.required(false).build()));
-	}
+    @Bean
+    public Docket api() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .select()
+                // The package of the service-directorys controllers that provide the REST-APIs
+                .apis(RequestHandlerSelectors.basePackage("de.hsesslingen.keim.efs.servicedirectory.controller"))
+                .paths(PathSelectors.any())
+                .build()
+                // Define proper tags for the API
+                .tags(new Tag("Search Api", "Search for available services using filter criteria"),
+                        new Tag("Service Api", "Service related API with CRUD functionalities"))
+                .apiInfo(apiInfo());
+    }
 
-	private ApiInfo apiInfo() {
-		return new ApiInfo("Service Directory",
-				"API description of Service Directory", "V0.1", null,
-				new Contact("Hochschule Esslingen", "https://www.hs-esslingen.de", null), 
-				null, null, Collections.emptyList());
-	}
+    private ApiInfo apiInfo() {
+        // Make some general API info
+        return new ApiInfo("Service Directory",
+                "API description of Service Directory", "V1.0.1", null,
+                new Contact("My Company", "https://whatever", null),
+                null, null, Collections.emptyList());
+    }
 
 }
