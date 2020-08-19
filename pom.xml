@@ -6,13 +6,13 @@
     <parent>
 		<groupId>com.github.keim-hs-esslingen.efs</groupId>
 		<artifactId>efs-service-parent</artifactId>
-		<version>1.0.1-SNAPSHOT</version>
+		<version>1.1.1-SNAPSHOT</version>
 		<relativePath/> <!-- skip parent lookup in parent directory. -->
 	</parent>
     
 	<groupId>com.github.keim-hs-esslingen.efs</groupId>
 	<artifactId>demo-service-directory</artifactId>
-	<version>1.0.1-SNAPSHOT</version>
+	<version>1.1.1-SNAPSHOT</version>
 	<name>Demo-Service-Directory</name>
 	<description>The service for searching relevant services.</description>
 
