@@ -6,13 +6,13 @@
     <parent>
 		<groupId>com.github.keim-hs-esslingen.efs</groupId>
 		<artifactId>efs-service-parent</artifactId>
-		<version>1.1.1-SNAPSHOT</version>
+		<version>2.0.0</version>
 		<relativePath/> <!-- skip parent lookup in parent directory. -->
 	</parent>
     
 	<groupId>com.github.keim-hs-esslingen.efs</groupId>
 	<artifactId>demo-service-directory</artifactId>
-	<version>1.1.1-SNAPSHOT</version>
+	<version>2.0.0</version>
 	<name>Demo-Service-Directory</name>
 	<description>The service for searching relevant services.</description>
 
@@ -29,11 +29,7 @@
         <!-- Swagger plugin dependencies -->
 		<dependency>
 		    <groupId>io.springfox</groupId>
-		    <artifactId>springfox-swagger2</artifactId>
-		</dependency>
-		<dependency>
-		    <groupId>io.springfox</groupId>
-		    <artifactId>springfox-swagger-ui</artifactId>
+		    <artifactId>springfox-boot-starter</artifactId>
 		</dependency>
 	</dependencies>
 </project>
